@@ -1,10 +1,10 @@
 create table if not exists genre(
 	id serial primary key,
-	genre_name varchar(50) not null
+	genre_name varchar(40) not null
 );
 create table if not exists Bands(
 	id serial primary key,
-	bands_name varchar(250) not null
+	bands_name varchar(144) not null
 );
 create table if not exists GenreBand(
 	genre_id integer references Genre(id),
@@ -13,7 +13,7 @@ create table if not exists GenreBand(
 );
 create table if not exists Album(
 	id serial primary key,
-	album_name varchar(250)not null,
+	album_name varchar(144)not null,
 	year_of integer not null
 );
 create table if not exists BandsAlbum(
@@ -23,13 +23,13 @@ create table if not exists BandsAlbum(
 );
 create table if not exists Songs(
 	id serial primary key,
-	song_name varchar(50) not null,
+	song_name varchar(40) not null,
 	duration integer,
 	album_id integer references album(id)
 );
 create table if not exists Colection(
 	id serial primary key,
-	colection_name varchar(50) not null,
+	colection_name varchar(40) not null,
 	year_of integer not null	
 );
 create table if not exists SongsColection(
